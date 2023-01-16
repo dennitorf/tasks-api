@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: tasks
+  name: tasks
+  namespace: default
+spec:
+  ports:
+  - name: tasks
+    port: 80
+    targetPort: service-port
+    protocol: TCP
+  selector:
+    component: tasks

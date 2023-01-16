@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: tasks
+  template:
+    metadata:
+      labels:
+        component: tasks
+    spec:
+      containers:
+        - name: tasks
+          image: hub.docker.com/tasks:{BUILD_NO}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
