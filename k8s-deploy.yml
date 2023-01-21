@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tasks
+  name: tasks-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: tasks
+      component: tasks-api
   template:
     metadata:
       labels:
-        component: tasks
+        component: tasks-api
     spec:
       containers:
-        - name: tasks
-          image: hub.docker.com/tasks:{BUILD_NO}
-          imagePullPolicy: IfNotPresent
+        - name: tasks-api
+          image: dennitorf/task-api:1.0.1
+          imagePullPolicy: Always
           ports:
             - containerPort: 80

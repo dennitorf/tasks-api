@@ -72,12 +72,12 @@ namespace OrganizeIt.Tasks.WebApi
             app.UseCors("AllowAngularDevClient");
             app.UseCors("AllowAngularClient");
             
-            if (env.IsDevelopment())
-            {
+            //if (env.IsDevelopment())
+            //{
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "OrganizeIt.Tasks.WebApi v1"));
-            }
+            // }
 
             app.UseHttpsRedirection();
 
